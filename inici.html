@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>AK*KA</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+
+<body style="background-color: #1f2029;">
+    <!-- Encabezado: Playlists más escuchadas -->
+    <header>
+        <h1>AK*KA</h1>
+        <div class="profileBubble">
+            <a href="login.html"><img src="2.JPG" alt="Foto de perfil"></a>
+        </div>
+        <h2>Playlists más escuchadas</h2>
+        <!-- Lista de playlists estructurada en dos columnas -->
+        <ul id="topPlaylists">
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </header>
+    <!-- Contenido principal: Playlists recomendadas -->
+    <main>
+        <h3>Canciones recomendadas</h3>
+        <!-- Grid de playlists recomendadas -->
+        <div class="recommendedGrid" id="recommendedPlaylists">
+            <!-- Cada div representa una playlist recomendada -->
+            <div class="playlistItem">
+                <img src="La Modelo.jpg" alt="La Modelo">
+                <h3>La Modelo -Ozuna</h3>
+                <audio id="LaModeloAudio" src="La Modelo.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="diva virtual Don omar.jpg" alt="Diva Virtual">
+                <h3>Diva Virtual -Don Omar</h3>
+                <audio id="DivaVirtualAudio" src="Diva virtual Don omar.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="manicomio Cosculluela.jpg" alt="Manicomio">
+                <h3>Manicomiol -Cosculluela</h3>
+                <audio id="ManicomioAudio" src="Cosculluela Manicomio Video Oficial .mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="Diles Bad Bunny Ozuna Farruko Arcangel engo Flow.jpg" alt="Diles">
+                <h3>Diles -Bad Bunny -Ozuna -Farruko -Arcangel -Ñengo Flow</h3>
+                <audio id="DilesAudio" src="Diles Bad Bunny Ozuna Farruko Arcangel engo Flow.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="Plan B Candy.jpg" alt="Candy">
+                <h3>Candy -Plan B</h3>
+                <audio id="CandyAudio" src="Plan B Candy Official Audio .mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="se preparo.jpg" alt="Se preparo">
+                <h3>Se Preparo -Ozuna</h3>
+                <audio id="SePreparoAudio" src="Ozuna Se Prepar Video Oficial Odisea.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="oye bb.jpg" alt="Oye BB">
+                <h3>Oye BB -Omar Montes -Nicky Jam</h3>
+                <audio id="OyeBBAudio" src="Omar Montes Nicky Jam Oye BB Official Video .mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="La Nota.jpg" alt="La Nota">
+                <h3>La Nota -Manuel Turizo -Raw -Alejandro -Myke Towers</h3>
+                <audio id="LaNotaAudio" src="La Nota MTZ Manuel Turizo x Rauw Alejandro x Myke Towers Video Oficial.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="Si No Te Quisiera.jpg" alt="Si No Te Quisiera">
+                <h3>Si No Te Quisiera -Juan Magan -Belinda Lapiz Conciente</h3>
+                <audio id="SiNoTeQuisieraAudio" src="Juan Magan Si No Te Quisiera feat Belinda Lapiz Conciente Audio .mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="La Curiosidad.jpg" alt="La Curiosidad">
+                <h3>La Curiosidad -Jay Wheeler -Myke Towers</h3>
+                <audio id="LaCuriosidadAudio" src="La Curiosidad Jay Wheeler Myke Towers.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="Si Tu Novio Te Deja Sola.jpg" alt="Si Tu Novio Te Deja Sola">
+                <h3>Si Tu Novio Te Deja Sola -JBalvin -Bad Bunny</h3>
+                <audio id="SiTuNovioTeDejaSolaAudio" src="Si Tu Novio Te Deja Sola J Balvin Bad Bunny.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="Danza Kuduro.jpeg" alt="Danza Kuduro">
+                <h3>Danza Kuduro -Don Omar</h3>
+                <audio id="DanzaKuduroAudio" src="Danza Kuduro Don Omar.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="La Rompe Corazones.jpg" alt="La Rompe Corazones">
+                <h3>La Rompe Corazones -Daddy Yankee -Ozuna</h3>
+                <audio id="LaRompeCorazonesAudio" src="La Rompe Corazones Daddy Yankee Ozuna.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="La Despedida.jpg" alt="La Despedida">
+                <h3>La Despedida -Daddy Yankee</h3>
+                <audio id="LaDespedidaAudio" src="Daddy Yankee La Despedida.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="PERRO NEGRO.jpg" alt="PERRO NEGRO">
+                <h3>PERRO NEGRO -Bad Bunny -Feid</h3>
+                <audio id="PERRONEGROAudio" src="Bad Bunny Feid PERRO NEGRO 8D AUDIO.mp3" type="audio/mpeg"></audio>
+            </div>
+            <div class="playlistItem">
+                <img src="Es un secreto.jpg" alt="Es un secreto">
+                <h3>Es un secreto -Plan B</h3>
+                <audio id="EsunsecretoAudio" src="Plan B Es un secreto Official Video.mp3" type="audio/mpeg"></audio>
+            <!-- Agrega más elementos según sea necesario -->
+        </div>
+    </main>
+        <div class="audio-player">
+            <div class="audio-controls">
+                <button id="prevSong"><i class="fas fa-backward"></i></button>
+                <button id="playPause"><i class="fas fa-play"></i></button>
+                <button id="nextSong"><i class="fas fa-forward"></i></button>
+            </div>
+            <audio id="audio" controls style="display: none;">
+                <source src="La Modelo.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <input type="color" id="colorPicker" value="#1DB954">
+        </div>
+    <!-- Menú de navegación inferior -->
+    <nav>
+        <ul>
+            <li><a href="inici.html"><img src="casa-icon.png" alt="Casa"> Home</a></li>
+            <li><a href="lupa.html"><img src="lupa-icon.png" alt="Lupa"> Buscar</a></li>
+            <li><a href="biblioteca.html"><img src="libro-icon.png" alt="Libro"> Biblioteca</a></li>
+            <li><a href="premium.html"><img src="estrella-icon.png" alt="Estrella"> Premium</a></li>
+        </ul>
+    </nav>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

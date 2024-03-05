@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1f2029;;
+        }
+
+        header,
+        main,
+        nav,
+        .searchBar,
+        .topArtists,
+        .recommendedArtists {
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1DB954;
+            color: white;
+            text-align: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        .searchBar {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #1DB954;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .searchBar input {
+            width: 70%;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        .searchBar button {
+            padding: 10px;
+        }
+
+        .topArtists,
+        .recommendedArtists {
+            text-align: center;
+            margin-bottom: 20px;
+            background-color: #1DB954;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: white;
+        }
+
+        .topArtists ul,
+        .recommendedArtists ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .topArtists li,
+        .recommendedArtists li {
+            display: inline-block;
+            margin: 10px;
+            font-size: 18px;
+        }
+
+        .recommendedGrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .playlistItem {
+            text-align: center;
+        }
+
+        .playlistItem img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .profileBubble {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .profileBubble img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        .createPlaylist button {
+            padding: 10px;
+            background-color: #1DB954;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+
+.createPlaylist form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.createPlaylist label {
+    margin-bottom: 10px;
+}
+
+.createPlaylist input {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.createPlaylist button {
+    padding: 10px;
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.audio-player {
+    position: absolute; /* Coloca el reproductor en una posición absoluta */
+    bottom: 0; /* Lo coloca al pie de la página */
+    left: 0;
+    right: 0;
+    background-color: #1DB954; /* Cambia el color de fondo del reproductor */
+    padding: 10px; /* Añade un poco de espacio alrededor del reproductor */
+    text-align: center;
+    margin-bottom: 35px;
+    position: fixed;
+    z-index: 1000;
+}
+.audioControls {
+    margin-top: 10px;
+}
+
+.audio-controls button {
+    margin: 0 10px; /* Añade espacio entre los botones */
+    border: none; /* Quita los bordes de los botones */
+    background-color: transparent; /* Hace transparente el fondo de los botones */
+    color: #fff; /* Color de los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    cursor: pointer; /* Cambia el cursor al pasar sobre los botones */
+}
+
+.audio-controls button:hover {
+    color: #ffc107; /* Cambia el color de los iconos al pasar el cursor */
+}
+.progress {
+    margin-top: 10px;
+}
+
+.progress progress {
+    width: 100%;
+}
+h3{
+    color: white;
+}
+li{
+    color: white;
+}
+#createPlaylistForm{
+    color: white;
+}
+    </style>
+    <title>Biblioteca</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    
+
+
+    <!-- Barra de menú en la parte superior -->
+    <header>
+        <div class="menu">
+            <h1>AK*KA</h1>
+            <div class="profileBubble">
+                <a href="login.html"><img src="2.JPG" alt="Foto de perfil"></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Biblioteca en la nueva página -->
+     <!-- Sección Biblioteca en la nueva página -->
+     <section class="library">
+        <h3>Mi Biblioteca</h3>
+        <!-- Lista de playlists del usuario -->
+        <ul id="playlistList">
+            <li>Playlist Personal 1</li>
+            <li>Playlist Personal 2</li>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
+
+    <!-- Sección Crear Playlist -->
+    <section class="createPlaylist">
+        <h2>Crear Nueva Playlist</h2>
+        <!-- Formulario para crear una nueva playlist -->
+        <form id="createPlaylistForm">
+            <label for="playlistName">Nombre de la Playlist:</label>
+            <input type="text" id="playlistName" name="playlistName" required>
+            <button type="submit">Crear Playlist</button>
+        </form>
+    </section>
+    
+    <div class="audio-player">
+        <div class="audio-controls">
+            <button id="prevSong"><i class="fas fa-backward"></i></button>
+            <button id="playPause"><i class="fas fa-play"></i></button>
+            <button id="nextSong"><i class="fas fa-forward"></i></button>
+        </div>
+        <audio id="audio" controls style="display: none;">
+            <source src="La Modelo.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <input type="color" id="colorPicker" value="#1DB954">
+    </div>
+    <!-- Menú de navegación inferior en la nueva página -->
+    <nav>
+        <ul>
+            <li><a href="inici.html"><img src="casa-icon.png" alt="Casa"> Home</a></li>
+            <li><a href="lupa.html"><img src="lupa-icon.png" alt="Lupa"> Buscar</a></li>
+            <li><a href="biblioteca.html"><img src="libro-icon.png" alt="Libro"> Biblioteca</a></li>
+            <li><a href="premium.html"><img src="estrella-icon.png" alt="Estrella"> Premium</a></li>
+        </ul>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Spotify-like Web</title>
+    
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <h1>AK*KA</h1>
+            <div class="profileBubble">
+                <a href="login.html"><img src="2.JPG" alt="Foto de perfil"></a>
+            </div>
+        </div>
+    </header>
+    <!-- Barra de búsqueda -->
+    <div class="searchBar">
+        <input type="text" placeholder="Buscar...">
+        <button type="button">Buscar</button>
+    </div>
+
+    <!-- Cantantes más escuchados -->
+    <section class="topArtists">
+        <h2>Cantantes más escuchados</h2>
+        <!-- Lista de cantantes -->
+        <ul>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
+
+    <!-- Cantantes recomendados -->
+    <section class="recommendedArtists">
+        <h2>Cantantes recomendados</h2>
+        <!-- Lista de cantantes recomendados -->
+        <ul>
+            <!-- Agrega más elementos según sea necesario -->
+        </ul>
+    </section>
+    <div id="myModal" class="modal">
+        <!-- Contenido del modal -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div id="searchResult"></div>
+        </div>
+      </div>
+    <!-- Contenido principal: Playlists recomendadas -->
+    <main>
+        <h3 style="color: white;">Playlists recomendadas</h3>
+        <!-- Grid de playlists recomendadas -->
+        <div class="recommendedGrid" id="recommendedPlaylists">
+            <!-- Cada div representa una playlist recomendada -->
+            <!-- Agrega más elementos según sea necesario -->
+        </div>
+    </main>
+    
+    <div class="audio-player">
+        <div class="audio-controls">
+            <button id="prevSong"><i class="fas fa-backward"></i></button>
+            <button id="playPause"><i class="fas fa-play"></i></button>
+            <button id="nextSong"><i class="fas fa-forward"></i></button>
+        </div>
+        <audio id="audio" controls style="display: none;">
+            <source src="La Modelo.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <input type="color" id="colorPicker" value="#1DB954">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const audioPlayer = document.getElementById("audioPlayer");
+            const checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.classList.add("checkbox");
+            const label = document.createElement("label");
+            label.setAttribute("for", "audioPlayer");
+            label.appendChild(checkbox);
+            document.body.appendChild(label);
+        });
+    </script>
+    <!-- Menú de navegación inferior -->
+    <nav>
+        <ul>
+            <li><a href="inici.html"><img src="casa-icon.png" alt="Casa"> Home</a></li>
+            <li><a href="lupa.html"><img src="lupa-icon.png" alt="Lupa"> Buscar</a></li>
+            <li><a href="biblioteca.html"><img src="libro-icon.png" alt="Libro"> Biblioteca</a></li>
+            <li><a href="premium.html"><img src="estrella-icon.png" alt="Estrella"> Premium</a></li>
+        </ul>
+    </nav>
+
+</body>
+</html>
